@@ -3,14 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.youtube.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; frame-src 'self' https://www.youtube.com; connect-src 'self';">
+    <meta http-equiv="Permissions-Policy" content="accelerometer=(), autoplay=(), clipboard-write=(), encrypted-media=(), gyroscope=(), picture-in-picture=()">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <title>Revolutionizing Crypto & NFT Onboarding with a Website Prototype</title>
     <link rel="stylesheet" href="styles/style.css">
+    <style>
+        .quiz-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.35);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        .quiz-modal.active {
+            display: flex;
+        }
+        .quiz-modal-content {
+            background: #fff;
+            width: 65vw;
+            max-width: 900px;
+            min-width: 320px;
+            min-height: 60vh;
+            border-radius: 24px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+            padding: 48px 40px 32px 40px;
+            position: relative;
+        }
+        .quiz-close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: #888;
+            cursor: pointer;
+            transition: color 0.15s;
+        }
+        .quiz-close-btn:hover {
+            color: #222;
+        }
+        body.quiz-blur > *:not(.quiz-modal) {
+            filter: blur(4px);
+            pointer-events: none;
+        }
+    </style>
 </head>
 <body>
   <nav class="navbar">
     <div class="navbar-content">
       <a href="index.html" class="navbar-title">Crypto Stitch</a>
-      <a href="pages/glossary.html" class="crypto-btn">Crypto Glossary</a>
+      <div class="navbar-actions">
+        <a href="pages/glossary.html" class="crypto-btn">Crypto Glossary</a>
+        <button id="quiz-btn" class="crypto-btn">Take a Quiz</button>
+      </div>
     </div>
   </nav>
   <div class="glossary-container">
@@ -73,5 +125,15 @@
       </div>
     </div>
   </div>
+  <!-- Quiz Modal -->
+  <div id="quiz-modal" class="quiz-modal">
+    <div class="quiz-modal-content">
+      <span class="quiz-close-btn">&times;</span>
+      <div id="quiz-root">
+        <!-- Quiz content will be injected here by JS -->
+      </div>
+    </div>
+  </div>
+  <script src="js/quiz.js"></script>
 </body>
 </html>
