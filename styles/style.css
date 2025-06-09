@@ -386,7 +386,7 @@ body.quiz-blur > *:not(.quiz-modal) {
   font-size: 1.1rem;
   padding: 0.8em;
   border-radius: 8px;
-  transition: background 0.16s;
+  transition: background 0.15s;
 }
 
 #quiz-form label:hover {

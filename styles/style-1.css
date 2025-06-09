@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+* {
+font-family: "Poppins", sans-serif;
+margin:0;
+padding:0;
+scroll-behavior: smooth;
+box-sizing: border-box;
+}
+
+body{
+  /* background-image: url(newsletter/crypto-stich.jpg); */
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-container{
+  max-height: 370px;
+  max-width: 896px;
+  margin: auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  background: #078a63;
+  box-shadow: 0 0 1rem hsla(0 0 0/16%);
+  border-radius: 0rem;
+  overflow: hidden;
+}
+
+.form-container{
+ padding: 20px;
+}
+
+.form-container h3{
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0rem;
+}
+
+.contact-form{
+  display: grid;
+  row-gap: 0.5rem;
+}
+
+.contact-form input, .contact-form textarea{
+  width: 100%;
+  border: none;
+  outline: none;
+  background: #2c2f48;
+  padding: 10px;
+  font-size: 0.9rem;
+  color: #fff;
+  border-radius: 0.4rem;
+}
+
+.contact-form textarea{
+  resize: none;
+  height: 60px;
+}
+
+.contact-form .send-button{
+  border: none;
+  outline: none;
+  background: #fc3090; 
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.contact-form .send-button:hover{
+  background: hsl(181, 100%, 44%, 0.8);
+  transition: 0.3s all linear;
+}
+
+.map iframe{
+  width: 100%;
+  height: 370px;
+}
