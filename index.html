@@ -9,6 +9,7 @@
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <title>Revolutionizing Crypto & NFT Onboarding with a Website Prototype</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="wallet-helper/wallet-helper.css">
     <style>
         .quiz-modal {
             display: none;
@@ -166,6 +167,33 @@
       </form>
     </div>
   </div>
+
+  <!-- Wallet Helper -->
+
+    <!-- Wallet Helper Trigger Button -->
+    <div id="wallet-helper-trigger">
+      <span>Choose Your Wallet</span>
+    </div>
+
+    <!-- Wallet Helper Modal -->
+    <div id="wallet-helper-modal" class="hidden">
+      <div class="wallet-modal-content">
+          <div class="close-button"></div>
+          
+          <!-- Step Indicator -->
+          <div class="step-indicator" id="step-indicator"></div>
+          
+          <!-- Main Content -->
+          <div id="wallet-helper-body"></div>
+          
+          <!-- Progress Bar -->
+          <div class="wallet-progress">
+              <div id="wallet-progress-bar" class="wallet-progress-bar"></div>
+          </div>
+      </div>
+    </div>
+
+
   <script src="js/quiz.js"></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -198,5 +226,8 @@
       }, 2500);
     });
   </script>
+  <!-- Wallet Helper Modal Logic -->
+ <script src="wallet-helper/wallet-helper.js"></script>
+ 
 </body>
 </html>
